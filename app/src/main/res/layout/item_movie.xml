@@ -18,10 +18,8 @@
         android:id="@+id/ivPoster"
         android:layout_width="120dp"
         android:layout_height="180dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -29,18 +27,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@id/ivPoster"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/ivPoster"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="24sp"
-        tools:text="Fantastic Beasts: The Secrets of Dumbledore" />
+        android:textStyle="bold"
+        tools:text="Test Title" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvTittle"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/tvTittle"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/ivPoster"
-        tools:text="Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease." />
+        android:fontFamily="sans-serif-condensed"
+        tools:text="Test Overview"
+       />
+
+
+
+    <Button
+        android:id="@+id/learnMoreBtn"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOverview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="10dp"
+        android:text="LEARN MORE"
+        android:textSize="10sp" />
 </RelativeLayout>
