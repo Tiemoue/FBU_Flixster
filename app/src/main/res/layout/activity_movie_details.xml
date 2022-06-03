@@ -57,12 +57,12 @@
         android:numStars="5"
         android:stepSize="0.5" />
 
-    <ImageView
-        android:id="@+id/tvPoster"
-        android:layout_width="375dp"
-        android:layout_height="196dp"
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="399dp"
+        android:layout_height="213dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginTop="12dp" />
+
 </RelativeLayout>

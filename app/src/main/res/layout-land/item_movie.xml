@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <ImageView
         android:id="@+id/ivPoster"
         android:layout_width="350dp"
@@ -13,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="15dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_marginStart="353dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="-214dp"
+        android:layout_toEndOf="@id/ivPoster"
         tools:text="Fantastic Beasts: The Secrets of Dumbledore" />
 
     <TextView
@@ -37,6 +39,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="-1dp"
+        android:layout_below="@id/tvTittle"
         android:layout_toEndOf="@+id/ivPoster"
         android:text="TextView"
         tools:text="Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease." />

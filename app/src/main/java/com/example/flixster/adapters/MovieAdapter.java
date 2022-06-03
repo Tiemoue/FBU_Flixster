@@ -70,7 +70,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvOverview.setText(movie.getOverview());
             String imageUrl;
             int radius = 30;
-            int margin = 10;
+
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 imageUrl = movie.getBackdropPath();
                 Glide.with(context).load(imageUrl).centerCrop().transform(new RoundedCorners(radius)).placeholder(R.drawable.placeholder).into(ivPoster);
