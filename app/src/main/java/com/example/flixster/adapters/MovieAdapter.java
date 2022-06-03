@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flixster.MovieDetailsActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
@@ -68,12 +69,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTittle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageUrl;
+            int radius = 30;
+            int margin = 10;
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 imageUrl = movie.getBackdropPath();
-                Glide.with(context).load(imageUrl).placeholder(R.drawable.placeholder).into(ivPoster);
+                Glide.with(context).load(imageUrl).centerCrop().transform(new RoundedCorners(radius)).placeholder(R.drawable.placeholder).into(ivPoster);
             }else{
                 imageUrl = movie.getPosterPath();
-                Glide.with(context).load(imageUrl).placeholder(R.drawable.imagenotfound).into(ivPoster);
+                Glide.with(context).load(imageUrl).centerCrop().transform(new RoundedCorners(radius)).placeholder(R.drawable.imagenotfound).into(ivPoster);
             }
 
 
