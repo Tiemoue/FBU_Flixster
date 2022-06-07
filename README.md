@@ -1,6 +1,6 @@
 # Project 1 - *Flixster*
 
-**Name of your app** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
+**Flixster** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
 
 Time spent: **15** hours spent in total
 
@@ -25,12 +25,13 @@ The following **stretch** features are implemented:
 The following **additional** features are implemented:
 
 * [ ] List anything else that you can get done to improve the app functionality!
+* [x] better layout
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='walk.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='videowalk.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
@@ -45,7 +46,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2022] [Collins Ikpeyi]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
