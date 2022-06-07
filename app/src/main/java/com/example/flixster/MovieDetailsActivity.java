@@ -35,7 +35,6 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
     RatingBar rbVoteAverage;
     YouTubePlayerView playerView;
 
-    public final String youtube_api_key = "AIzaSyA5GHARyE7L8_9AkOfYeJ6dfb-3TEq3bdE";
     public final String videosURL =  "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public final String TAG = ".MovieDetailsActivity";
 
@@ -44,21 +43,16 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
+        tvTitle = findViewById(R.id.tvTitle);
+        tvOverview = findViewById(R.id.tvOverview);
+        rbVoteAverage = findViewById(R.id.rbVoteAverage);
 
-
-
-        movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
+        movie = Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         Log.d("MovieDetailsActivity", String.format("Showing details for '%s'", movie.getTitle()));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
 
-        // temporary test video id -- TODO replace with movie trailer video id
-//        final String videoId = "tKodtNFpzBA";
-        // resolve the player view from the layout
-        playerView = (YouTubePlayerView) findViewById(R.id.player);
+        playerView = findViewById(R.id.player);
 
         // initialize with API key stored in secrets.xml
         AsyncHttpClient client = new AsyncHttpClient();
@@ -71,7 +65,7 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
                     JSONArray results = jsonObject.getJSONArray("results");
                     String videoId = results.getJSONObject(0).getString("key");
                     callFunction(videoId);
-                    Log.i(TAG, "Results: " + results.toString());
+                    Log.i(TAG, "Results: " + results);
 
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit json exception", e);
@@ -84,23 +78,6 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
                 Log.d(TAG, "onFailure");
             }
         });
-
-/*            playerView.initialize(getString(R.string.youtube_api_key), new YouTubePlayer.OnInitializedListener() {
-                @Override
-                public void onInitializationSuccess(YouTubePlayer.Provider provider,
-                                                    YouTubePlayer youTubePlayer, boolean b) {
-                    // do any work here to cue video, play video, etc.
-                    youTubePlayer.cueVideo(videoId);
-                }
-
-                @Override
-                public void onInitializationFailure(YouTubePlayer.Provider provider,
-                                                    YouTubeInitializationResult youTubeInitializationResult) {
-                    // log the error
-                    Log.e("MovieTrailerActivity", "Error initializing YouTube player");
-                }
-            });*/
-
         // vote average is 0..10, convert to 0..5 by dividing by 2
         float voteAverage = (float) movie.getVoteAverage();
         rbVoteAverage.setRating(voteAverage / 2.0f);
@@ -111,7 +88,6 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                 YouTubePlayer youTubePlayer, boolean b) {
-                // do any work here to cue video, play video, etc.
                 youTubePlayer.cueVideo(videoId);
             }
 

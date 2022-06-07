@@ -20,8 +20,6 @@ public class Movie {
     Double voteAverage;
     int id;
 
-
-
     public Movie(){}
 
     public Movie(JSONObject jsonObject) throws JSONException {

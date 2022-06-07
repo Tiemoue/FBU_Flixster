@@ -79,8 +79,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 Glide.with(context).load(imageUrl).centerCrop().transform(new RoundedCorners(radius)).placeholder(R.drawable.imagenotfound).into(ivPoster);
             }
 
-
-
         }
 
         @Override
