@@ -57,7 +57,6 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
 
         // temporary test video id -- TODO replace with movie trailer video id
 //        final String videoId = "tKodtNFpzBA";
-         String videoId;
         // resolve the player view from the layout
         playerView = (YouTubePlayerView) findViewById(R.id.player);
 
